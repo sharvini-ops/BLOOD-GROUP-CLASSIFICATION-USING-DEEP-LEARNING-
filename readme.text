@@ -1,0 +1,135 @@
+# 🧬 Fingerprint Blood Group Prediction System
+
+## 📌 Overview
+
+This project  predicts a person's blood group using fingerprint images.
+It uses multiple deep learning models and combines their predictions using ensemble learning to improve reliability.
+
+---
+
+## 🎯 Objective
+
+* To explore the relationship between fingerprint patterns and blood group classification
+* To build a predictive system using deep learning models
+* To implement real-time prediction using camera input
+
+---
+
+## ⚙️ Features
+
+* 📷 Real-time fingerprint capture using camera
+* 🖼️ Image input from dataset and local storage
+* 🧠 Multi-model prediction (Ensemble Learning)
+* 🔍 Fingerprint pattern enhancement using edge detection
+* 📊 Confidence-based prediction display
+* 💾 Automatic result saving with labeled output image
+
+---
+
+## 🧠 Models Used
+
+* VGG16
+* ResNet18
+* AlexNet
+* LeNet (custom CNN for grayscale input)
+
+---
+
+## 🔄 Working Process
+
+1. User selects input source:
+
+   * Dataset (BMP only)
+   * Storage (all formats)
+   * Camera input
+
+2. Image preprocessing:
+
+   * Resize and normalization
+   * Grayscale conversion (for LeNet)
+   * Edge detection (for fingerprint pattern enhancement)
+
+3. Prediction:
+
+   * Each model predicts independently
+   * Outputs are combined using majority voting
+
+4. Final Output:
+
+   * Displayed on screen
+   * Saved in the `results/` folder
+
+---
+
+## 🗂️ Project Structure
+
+```
+Fingerprint_Project/
+│
+├── dataset/           # Training dataset
+├── saved_models/      # Trained model files (.pth)
+├── results/           # Output images
+│
+├── predict.py         # Main prediction program
+├── train_models.py    # Training script for CNN models
+├── train_lenet.py     # Training script for LeNet
+├── README.txt         # Project documentation
+```
+
+---
+
+## ▶️ How to Run
+
+1. Open terminal in project folder
+
+2. Run the command:
+
+   ```
+   python predict.py
+   ```
+
+3. Choose input option:
+
+   * 1 → Dataset (BMP only)
+   * 2 → Storage
+   * 3 → Camera input
+
+4. View prediction and saved result
+
+---
+
+## 📊 Output
+
+* Displays prediction from each model with confidence
+* Final blood group shown in format:
+
+  ```
+  O+ / O-
+  ```
+* Result image saved with label
+
+---
+
+## ⚠️ Limitations
+
+* Prediction accuracy depends on dataset quality
+* Fingerprint-based blood group detection is not medically proven
+* Camera input may vary due to lighting and positioning
+
+---
+
+## 🚀 Future Enhancements
+
+* Improve dataset size and diversity
+* Apply advanced fingerprint processing (ridge thinning)
+* Implement GUI-based application
+* Use weighted ensemble for better accuracy
+* Deploy as web or mobile application
+
+---
+
+## 🧠 Conclusion
+
+This project demonstrates the use of deep learning and image processing techniques to build an intelligent prediction system. While not medically reliable, it showcases the potential of AI in pattern recognition and classification tasks.
+
+---
